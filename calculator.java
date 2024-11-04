@@ -1,5 +1,3 @@
-import com.sun.source.tree.DoWhileLoopTree;
-
 import java.util.Scanner;
 
 public class calculator {
@@ -14,19 +12,21 @@ public class calculator {
         //Aqui farei a pergunta a respeito dos números envolvidos e qual operação usar
 
 
-        boolean continua = false;
+        boolean continua;
 
         do {
 
 
-            System.out.printf("Informe o primeiro número que deseja para realizar a operação:\n");
+            System.out.print("Primeiro numero: ");
             float a = ler.nextFloat();
+            //ler.nextLine();
 
-            System.out.printf("Informe a operação:\n");
+            System.out.print("Informe a operação: ");
             String oper = ler.next();
 
-            System.out.printf("Informe o segundo número que deseja para realizar a operação:\n");
+            System.out.print("Segundo numero: ");
             float b = ler.nextFloat();
+            //ler.nextLine();
             //Agora é a parte do switch que faz  a calculadora funcionar
 
 
@@ -48,15 +48,17 @@ public class calculator {
 
             }
 
-            System.out.println("O resultado da operação é \n");
-            System.out.println(result);
+            System.out.println("O resultado da operação é " + result);
 
-            System.out.println("deseja continuar? S/N");
+            System.out.print("deseja continuar? (S/N): ");
             String resposta = ler.next().toUpperCase();
 
-            if (resposta.equals('S')) {
+            if (resposta.equals("S")) {
+                System.out.println("Ok vamos continuar");
                 continua = true;
+
             }else {
+                System.out.println("Finalizado!");
                 continua = false;
             }
 
