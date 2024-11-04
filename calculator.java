@@ -1,3 +1,5 @@
+import com.sun.source.tree.DoWhileLoopTree;
+
 import java.util.Scanner;
 
 public class calculator {
@@ -11,39 +13,56 @@ public class calculator {
         float result = 0;
         //Aqui farei a pergunta a respeito dos números envolvidos e qual operação usar
 
-        System.out.printf ("Informe o primeiro número que deseja para realizar a operação:\n");
-        float a = ler.nextInt();
 
-        System.out.printf ("Informe a operação:\n");
-        String oper = ler.next();
+        boolean continua = false;
 
-        System.out.printf ("Informe o segundo número que deseja para realizar a operação:\n");
-        float b = ler.nextInt();
-        //Agora é a parte do switch que faz  a calculadora funcionar
+        do {
 
-        switch (oper)
-        {
-            case "+":
-                result = a+b;
-                break;
-            case "-":
-                result = a-b;
-                break;
-            case "*":
-                result = a*b;
-                break;
-            case "/":
-                result = a/b;
-                break;
-            default:
-                System.out.println("Operação invalida");
 
-        }
+            System.out.printf("Informe o primeiro número que deseja para realizar a operação:\n");
+            float a = ler.nextFloat();
 
-        System.out.println("O resultado da operação é \n");
-        System.out.println(result);
+            System.out.printf("Informe a operação:\n");
+            String oper = ler.next();
 
-        ler.close();
+            System.out.printf("Informe o segundo número que deseja para realizar a operação:\n");
+            float b = ler.nextFloat();
+            //Agora é a parte do switch que faz  a calculadora funcionar
+
+
+            switch (oper) {
+                case "+":
+                    result = a + b;
+                    break;
+                case "-":
+                    result = a - b;
+                    break;
+                case "*":
+                    result = a * b;
+                    break;
+                case "/":
+                    result = a / b;
+                    break;
+                default:
+                    System.out.println("Operação invalida");
+
+            }
+
+            System.out.println("O resultado da operação é \n");
+            System.out.println(result);
+
+            System.out.println("deseja continuar? S/N");
+            String resposta = ler.next().toUpperCase();
+
+            if (resposta.equals('S')) {
+                continua = true;
+            }else {
+                continua = false;
+            }
+
+        }while (continua == true);
+
+
     }
 
 }
