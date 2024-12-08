@@ -1,2 +1,2 @@
 # simple-calculator
-Just making a sample calculator using some tools
+Just making a simple calculator using some tools
